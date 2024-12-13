@@ -42,7 +42,8 @@ $message-other-color: #e6f3ff;
 
   .message {
     margin-bottom: 15px;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     max-width: 70%;
     padding: 10px;
     @include rounded-corners();
@@ -61,10 +62,30 @@ $message-other-color: #e6f3ff;
       color: #333;
     }
 
-    .username {
-      font-size: 0.85em;
-      font-weight: bold;
-      margin-bottom: 5px;
+    .message-header {
+      display: flex;
+      align-items: center;
+
+      .avatar {
+        margin-right: 10px;
+      }
+
+      .username {
+        font-size: 0.85em;
+        font-weight: bold;
+        margin-right: 10px;
+      }
+
+      .timestamp {
+        margin-left: auto;
+        font-size: 0.8em;
+        color: gray;
+      }
+    }
+
+    .message-text {
+      margin-top: 5px; // Space between the header and the message text
+      font-size: 1em;
     }
   }
 }
@@ -97,3 +118,5 @@ $message-other-color: #e6f3ff;
     }
   }
 }
+
+//TODO Implement a color palette for the chap app (for example WhatsApp)
